@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>中碳能源 · 电梯空调监控系统</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+
+    <!-- ========== 应用外壳：侧边栏 + 工作区 ========== -->
+    <div class="app-shell">
+
+      <!-- ===== 侧边栏 ===== -->
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-mark">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 21h18"/>
+              <path d="M5 21V8l7-4v17"/>
+              <path d="M19 21V12l-7-4"/>
+              <path d="M9 11h.01"/>
+              <path d="M9 15h.01"/>
+            </svg>
+          </div>
+          <div class="brand-text">
+            <strong>中碳能源</strong>
+            <span>智慧建筑能源系统</span>
+          </div>
+        </div>
+
+        <nav class="nav-list">
+          <a class="nav-item active" href="#">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect width="7" height="9" x="3" y="3" rx="1"/>
+              <rect width="7" height="5" x="14" y="3" rx="1"/>
+              <rect width="7" height="9" x="14" y="12" rx="1"/>
+              <rect width="7" height="5" x="3" y="16" rx="1"/>
+            </svg>
+            <span>电梯监控</span>
+          </a>
+          <a class="nav-item" href="#">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17.7 7.7a2.5 2.5 0 1 1 1.8 4.3H2"/>
+              <path d="M9.6 4.6A2 2 0 1 1 11 8H2"/>
+              <path d="M12.6 19.4A2 2 0 1 0 14 16H2"/>
+            </svg>
+            <span>空调监控</span>
+          </a>
+          <a class="nav-item" href="#">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.8 1.3 1.5 1.5 2.5"/>
+              <path d="M9 18h6"/>
+              <path d="M10 22h4"/>
+            </svg>
+            <span>照明控制</span>
+          </a>
+          <a class="nav-item" href="#">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 3v18h18"/>
+              <path d="M7 16l4-4 3 3 5-6"/>
+            </svg>
+            <span>能耗分析</span>
+          </a>
+          <a class="nav-item" href="#">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/>
+              <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/>
+            </svg>
+            <span>告警中心</span>
+          </a>
+          <a class="nav-item" href="#">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <path d="M14 2v6h6"/>
+              <path d="M16 13H8"/>
+              <path d="M16 17H8"/>
+            </svg>
+            <span>运维日志</span>
+          </a>
+          <a class="nav-item" href="#">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/>
+              <circle cx="12" cy="12" r="3"/>
+            </svg>
+            <span>系统设置</span>
+          </a>
+        </nav>
+      </aside>
+
+      <!-- ===== 工作区 ===== -->
+      <div class="workspace">
+
+        <!-- 顶部导航栏 -->
+        <header class="topbar">
+          <div class="module-tabs">
+            <button class="module active" type="button">
+              <svg class="module-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+              </svg>
+              <span>监控中心</span>
+            </button>
+          </div>
+          <div class="alarm-strip">
+            <button class="btn secondary compact" id="btnHelp" type="button">
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+                <path d="M12 17h.01"/>
+              </svg>
+              <span>功能说明</span>
+            </button>
+            <div class="user-pill">
+              <div class="user-avatar">管</div>
+              <span>管理员</span>
+            </div>
+          </div>
+        </header>
+
+        <!-- 仪表盘：设备树 + 监控主区域 -->
+        <div class="dashboard">
+
+          <!-- ===== 左侧设备面板 ===== -->
+          <section class="device-panel">
+            <div class="tree-tabs">
+              <button class="active" type="button">
+                <svg class="tree-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="5" r="2"/>
+                  <path d="M12 7v4"/>
+                  <path d="M8 11h8l-2 4h-4z"/>
+                  <path d="M10 15v5"/>
+                  <path d="M14 15v5"/>
+                </svg>
+                设备列表
+              </button>
+            </div>
+
+            <div class="search-box">
+              <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"/>
+                <path d="m21 21-4.3-4.3"/>
+              </svg>
+              <input id="searchInput" type="search" placeholder="搜索电梯..." />
+            </div>
+
+            <div id="elevatorList" class="elevator-list"></div>
+          </section>
+
+          <!-- ===== 右侧监控主区域 ===== -->
+          <section class="monitor-area">
+
+            <!-- 传感器胶囊数据 -->
+            <div class="metric-row">
+              <div class="metric-card metric-blue">
+                <div class="metric-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"/>
+                  </svg>
+                </div>
+                <div class="metric-body">
+                  <span class="metric-label">运行台数</span>
+                  <strong class="metric-value" id="runningCount">—</strong>
+                </div>
+              </div>
+              <div class="metric-card metric-orange">
+                <div class="metric-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z"/>
+                  </svg>
+                </div>
+                <div class="metric-body">
+                  <span class="metric-label">平均温度</span>
+                  <strong class="metric-value" id="avgTemp">—</strong>
+                </div>
+              </div>
+              <div class="metric-card metric-cyan">
+                <div class="metric-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/>
+                  </svg>
+                </div>
+                <div class="metric-body">
+                  <span class="metric-label">平均湿度</span>
+                  <strong class="metric-value" id="avgHumidity">—</strong>
+                </div>
+              </div>
+              <div class="metric-card metric-purple">
+                <div class="metric-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/>
+                  </svg>
+                </div>
+                <div class="metric-body">
+                  <span class="metric-label">总电流</span>
+                  <strong class="metric-value" id="totalCurrent">—</strong>
+                </div>
+              </div>
+              <div class="metric-card metric-green">
+                <div class="metric-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m12 14 4-4"/>
+                    <path d="M3.34 19a10 10 0 1 1 17.32 0"/>
+                  </svg>
+                </div>
+                <div class="metric-body">
+                  <span class="metric-label">总功率</span>
+                  <strong class="metric-value" id="totalPower">—</strong>
+                </div>
+              </div>
+            </div>
+
+            <!-- 状态筛选栏 -->
+            <div class="filter-bar" id="filterBar">
+              <button class="filter-btn active" data-filter="all" type="button">全部</button>
+              <button class="filter-btn" data-filter="on" type="button">开机</button>
+              <button class="filter-btn" data-filter="off" type="button">关机</button>
+              <button class="filter-btn" data-filter="fault" type="button">故障</button>
+              <span class="filter-count" id="filterCount"></span>
+            </div>
+
+            <!-- 电梯卡片面板 -->
+            <div class="elevator-cards-panel">
+              <div id="elevatorCards" class="elevator-card-grid"></div>
+              <div class="empty-state-panel" id="emptyStatePanel" hidden>
+                <div class="empty-state">
+                  <svg class="empty-state-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/>
+                  </svg>
+                  <p class="empty-state-title">当前筛选条件下暂无设备</p>
+                  <p class="empty-state-hint">请尝试切换其他状态筛选</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 底部控制面板 -->
+            <div class="control-dock">
+
+              <!-- 单梯空调控制 -->
+              <div class="control-card">
+                <div class="section-heading">
+                  <div class="section-title">
+                    <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M17.7 7.7a2.5 2.5 0 1 1 1.8 4.3H2"/>
+                      <path d="M9.6 4.6A2 2 0 1 1 11 8H2"/>
+                      <path d="M12.6 19.4A2 2 0 1 0 14 16H2"/>
+                    </svg>
+                    <span>单梯空调控制</span>
+                  </div>
+                  <strong id="singleControlName">—</strong>
+                </div>
+
+                <div class="single-control-grid">
+                  <!-- 设定温度 -->
+                  <div class="temperature-row">
+                    <span class="ctrl-label">温度</span>
+                    <input id="singleTemp" type="number" min="18" max="28" step="0.5" value="24" />
+                    <em>℃</em>
+                    <button class="btn primary inline-apply" id="applySingle" type="button">
+                      <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="m22 2-7 20-4-9-9-4Z"/>
+                        <path d="M22 2 11 13"/>
+                      </svg>
+                      <span>下发</span>
+                    </button>
+                  </div>
+
+                  <!-- 风速 + 模式 并排 -->
+                  <div class="mode-row-pair">
+                    <div class="mode-col">
+                      <span class="ctrl-label">风速</span>
+                      <strong id="currentFan">—</strong>
+                      <select id="singleFan">
+                        <option>自动</option>
+                        <option>低速</option>
+                        <option>中速</option>
+                        <option>高速</option>
+                      </select>
+                    </div>
+                    <div class="mode-col">
+                      <span class="ctrl-label">模式</span>
+                      <strong id="currentMode">—</strong>
+                      <select id="singleMode">
+                        <option>制冷</option>
+                        <option>制热</option>
+                        <option>除湿</option>
+                        <option>送风</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <!-- 开关机 -->
+                  <div class="power-row">
+                    <span class="ctrl-label">开关</span>
+                    <strong id="currentPower">—</strong>
+                    <div class="segmented-actions">
+                      <button class="btn primary" id="singlePowerOn" type="button">
+                        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M12 2v10"/>
+                          <path d="M18.4 6.6a9 9 0 1 1-12.77.04"/>
+                        </svg>
+                        <span>开机</span>
+                      </button>
+                      <button class="btn secondary" id="singlePowerOff" type="button">
+                        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M12 2v10"/>
+                          <path d="M18.4 6.6a9 9 0 1 1-12.77.04"/>
+                        </svg>
+                        <span>关机</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 批量空调控制 -->
+              <div class="control-card">
+                <div class="section-heading">
+                  <div class="section-title">
+                    <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect width="7" height="7" x="3" y="3" rx="1"/>
+                      <rect width="7" height="7" x="14" y="3" rx="1"/>
+                      <rect width="7" height="7" x="14" y="14" rx="1"/>
+                      <rect width="7" height="7" x="3" y="14" rx="1"/>
+                    </svg>
+                    <span>批量空调控制</span>
+                  </div>
+                  <button class="btn secondary compact" id="selectAllBatch" type="button">
+                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M20 6 9 17l-5-5"/>
+                    </svg>
+                    <span>全选</span>
+                  </button>
+                </div>
+
+                <div class="batch-list" id="batchList"></div>
+
+                <div class="batch-control-grid">
+                  <label>
+                    <span>温度</span>
+                    <input id="batchTemp" type="number" min="18" max="28" step="0.5" value="24" />
+                    <em>℃</em>
+                  </label>
+                  <label>
+                    <span>风速</span>
+                    <select id="batchFan">
+                      <option>自动</option>
+                      <option>低速</option>
+                      <option>中速</option>
+                      <option>高速</option>
+                    </select>
+                  </label>
+                  <label>
+                    <span>模式</span>
+                    <select id="batchMode">
+                      <option>制冷</option>
+                      <option>制热</option>
+                      <option>除湿</option>
+                      <option>送风</option>
+                    </select>
+                  </label>
+                  <button class="btn primary" id="applyBatch" type="button">
+                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="m22 2-7 20-4-9-9-4Z"/>
+                      <path d="M22 2 11 13"/>
+                    </svg>
+                    <span>批量下发</span>
+                  </button>
+                </div>
+
+                <div class="batch-power-actions">
+                  <button class="btn primary" id="applyBatchPowerOn" type="button">
+                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 2v10"/>
+                      <path d="M18.4 6.6a9 9 0 1 1-12.77.04"/>
+                    </svg>
+                    <span>一键开机</span>
+                  </button>
+                  <button class="btn secondary" id="applyBatchPowerOff" type="button">
+                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 2v10"/>
+                      <path d="M18.4 6.6a9 9 0 1 1-12.77.04"/>
+                    </svg>
+                    <span>一键关机</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <span id="logText" hidden></span>
+
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== 功能说明弹窗 ========== -->
+    <div class="help-overlay" id="helpOverlay">
+      <div class="help-modal" role="dialog" aria-modal="true" aria-labelledby="helpTitle">
+        <div class="help-header">
+          <h2 id="helpTitle">电梯空调监控系统 · 功能说明</h2>
+          <button class="help-close" id="btnHelpClose" type="button" aria-label="关闭">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 6 6 18"/><path d="m6 6 12 12"/>
+            </svg>
+          </button>
+        </div>
+
+        <div class="help-body">
+
+          <div class="help-section">
+            <div class="help-section-icon help-icon-overview">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+              </svg>
+            </div>
+            <div class="help-section-content">
+              <h3>系统概述</h3>
+              <p>本系统用于集中监控和管理酒店各电梯轿厢空调的运行状态。通过实时数据采集、状态展示和远程控制，实现电梯空调的智能化运维，提升乘客舒适度并降低能耗成本。</p>
+            </div>
+          </div>
+
+          <div class="help-section">
+            <div class="help-section-icon help-icon-monitor">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/>
+                <rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/>
+              </svg>
+            </div>
+            <div class="help-section-content">
+              <h3>实时监控面板</h3>
+              <p>页面中央展示当前所选区域下所有电梯空调的运行卡片，每张卡片包含以下信息：</p>
+              <ul>
+                <li><strong>右上角状态标签</strong> — <span class="hl hl-green">空调开</span>（绿色）/ <span class="hl hl-red">空调告警</span>（红色）/ <span class="hl hl-gray">空调离线</span>（灰色）/ <span class="hl hl-blue">空调关</span>（蓝色）</li>
+                <li><strong>轿厢温度</strong> — 当前电梯轿厢内的实时温度</li>
+                <li><strong>设定温度</strong> — 空调目标温度设定值</li>
+                <li><strong>电流 / 功率</strong> — 当前空调运行的电气参数</li>
+                <li><strong>风速 / 模式</strong> — 当前风速档位（自动/低速/中速/高速）与运行模式</li>
+                <li><strong>底部时间戳</strong> — 最近一次数据更新时间</li>
+              </ul>
+              <p>点击任意卡片即可选中该电梯，并在下方控制面板中查看和调整其参数。</p>
+            </div>
+          </div>
+
+          <div class="help-section">
+            <div class="help-section-icon help-icon-kpi">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 3v18h18"/><path d="M7 16l4-4 3 3 5-6"/>
+              </svg>
+            </div>
+            <div class="help-section-content">
+              <h3>顶部 KPI 指标栏</h3>
+              <p>页面顶部五个指标卡片汇总当前所选区域的电梯空调关键数据（选择"全部区域"时汇总全部设备）：</p>
+              <ul>
+                <li><strong>运行台数</strong> — 当前空调处于开机状态的电梯数量</li>
+                <li><strong>平均温度</strong> — 所有在线电梯轿厢温度的平均值</li>
+                <li><strong>平均湿度</strong> — 所有在线电梯轿厢湿度的平均值</li>
+                <li><strong>总电流</strong> — 全部电梯空调电流之和</li>
+                <li><strong>总功率</strong> — 全部电梯空调功率之和</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="help-section">
+            <div class="help-section-icon help-icon-filter">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/>
+              </svg>
+            </div>
+            <div class="help-section-content">
+              <h3>状态筛选栏</h3>
+              <p>位于 KPI 指标栏下方，可快速按空调状态过滤监控卡片和批量控制列表：</p>
+              <ul>
+                <li><strong>全部</strong> — 显示所有电梯空调</li>
+                <li><strong>开机</strong> — 仅显示空调处于开机状态的电梯</li>
+                <li><strong>关机</strong> — 仅显示空调处于关机状态的电梯</li>
+                <li><strong>故障</strong> — 仅显示告警或离线的电梯</li>
+              </ul>
+              <p>切换筛选条件后，页面中央卡片和批量控制区域的设备列表会同步过滤；全选按钮仅选中当前筛选结果，再次点击可取消全选。右侧显示当前筛选条件下的设备总数。</p>
+            </div>
+          </div>
+
+          <div class="help-section">
+            <div class="help-section-icon help-icon-single">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l-.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1-1-1.74l-.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/>
+                <circle cx="12" cy="12" r="3"/>
+              </svg>
+            </div>
+            <div class="help-section-content">
+              <h3>单梯空调控制</h3>
+              <p>对左侧列表或监控卡片中选中的单个电梯空调进行参数设置：</p>
+              <ul>
+                <li><strong>温度设定</strong> — 调整目标温度（18℃~28℃，步长 0.5℃），点击<strong>下发</strong>按钮生效</li>
+                <li><strong>风速</strong> — 切换当前风速档位：自动 / 低速 / 中速 / 高速</li>
+                <li><strong>模式</strong> — 切换运行模式：制冷 / 制热 / 除湿 / 送风</li>
+                <li><strong>开关机</strong> — 一键开启或关闭该电梯空调</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="help-section">
+            <div class="help-section-icon help-icon-batch">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/>
+                <rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/>
+              </svg>
+            </div>
+            <div class="help-section-content">
+              <h3>批量空调控制</h3>
+              <p>支持同时对多台电梯空调下发相同参数：</p>
+              <ul>
+                <li><strong>勾选目标电梯</strong> — 在批量控制区域的电梯列表中勾选需要操作的电梯；点击右上角<strong>全选</strong>按钮可快速选中全部，再次点击则<strong>取消全选</strong></li>
+                <li><strong>批量设置</strong> — 统一设定温度、风速、模式，点击<strong>批量下发</strong>按钮一次性应用到所有选中电梯</li>
+                <li><strong>一键开关机</strong> — 对所有选中电梯统一执行开机或关机操作</li>
+                <li><strong>空选保护</strong> — 当未勾选任何电梯时，<strong>批量下发</strong>、<strong>一键开机</strong>、<strong>一键关机</strong>按钮会自动置灰禁用，避免误操作</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="help-section">
+            <div class="help-section-icon help-icon-sidebar">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="5" r="2"/><path d="M12 7v4"/>
+                <path d="M8 11h8l-2 4h-4z"/><path d="M10 15v5"/><path d="M14 15v5"/>
+              </svg>
+            </div>
+            <div class="help-section-content">
+              <h3>设备列表与搜索</h3>
+              <p>左侧设备面板以区域分组树形结构展示所有电梯设备，方便快速切换监控目标：</p>
+              <ul>
+                <li><strong>区域分组</strong> — 电梯按所在区域（北塔、南塔、宴会厅、行政楼层、服务区）分组展示，每个区域节点显示该区域下的设备数量</li>
+                <li><strong>点击区域</strong> — 点击区域节点可展开/收起该区域的设备列表，同时右侧卡片区域将展示该区域下的所有电梯空调设备</li>
+                <li><strong>全部区域</strong> — 点击顶部"全部区域"按钮可查看所有区域的全部设备</li>
+                <li><strong>点击切换</strong> — 点击列表中的电梯名称，右侧监控卡片和单梯控制面板同步切换</li>
+                <li><strong>搜索筛选</strong> — 顶部搜索框支持按电梯编号或名称模糊搜索，搜索时自动展开匹配区域</li>
+                <li><strong>选中高亮</strong> — 当前选中项以蓝色高亮显示，左侧有蓝色指示条</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="help-footer">
+          <p>中碳能源 · 智慧建筑能源系统 — 电梯空调监控模块 v1.0</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
