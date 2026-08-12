@@ -203,12 +203,12 @@ function renderElevatorCards() {
           <strong>${formatTemp(item.target)}</strong>
         </div>
         <div class="card-metric">
-          <span>电流</span>
-          <strong>${formatMetric(item.current, "A", 1)}</strong>
+          <span>湿度</span>
+          <strong>${formatMetric(item.humidity, "%", 0)}</strong>
         </div>
         <div class="card-metric">
-          <span>功率</span>
-          <strong>${formatMetric(item.power, "kW", 2)}</strong>
+          <span>电流</span>
+          <strong>${formatMetric(item.current, "A", 1)}</strong>
         </div>
         <div class="card-metric">
           <span>风速/模式</span>
